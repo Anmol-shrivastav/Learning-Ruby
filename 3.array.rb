@@ -19,3 +19,27 @@ print ary.include?(3), "\n" # true => it will check that given argument is prese
 
 ary1 = [1,2,[3,4,5],[6,7,8],9]
 print ary1.flatten , "\n" # [1,2,3,4,5,6,7,8,9] => array.flatten will create a new one dimensional array of nested arrays, original nested array will remain same.
+
+# .join method will return a string of all elements of an array
+print ary.join , "\n"     # 235 =>  if the separator argument is nil then an empty string will take place as separator
+print ary.join(", "), "\n"  #2, 3, 5
+
+
+# .each method will iterate the entire array allowing you to so some operations on each element
+ary.each do |ele|
+    print ele , " * 2 = ", ele*2 , "\n"     # we are doing double of each element
+end
+
+# .map method is same as javascript map method it will iterate entire array and map every element with a certain logic and make a new array with that mapped elements and return that array.
+mappedAry = ary.map { |ele| ele * 2 }
+print mappedAry , "\n"  # [4, 6, 10]
+
+# .uniq method takes array having duplicate elements and return a new array having unique elements
+ary1 = [1,1,2,3,5,6,2,2,3,5]
+print ary1.uniq , "\n"
+print ary1 , "\n" 
+
+# .concat method will append elements from a array to the original array, .concat method can take any number of arrays as arguments.
+ary1 = [1,2,3]
+ary1.concat([4,5,6],[7,8,9])
+print ary1, "\n"        # [1,2,3,4,5,6,7,8,9]
